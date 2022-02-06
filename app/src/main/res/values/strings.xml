@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyPractical</string>
+    <string name="name">Name-</string>
+    <string name="village">Village</string>
+    <string name="route">Route</string>
+    <string name="save_data_message">Do you want to save this Data in local Database</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+</resources>

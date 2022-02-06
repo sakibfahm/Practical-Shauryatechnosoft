@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="android.widget.TextView" />
+        <import type="java.util.List" />
+        <variable
+            name="listner"
+            type="com.example.mypractical.ui.main.MainActivity" />
+        <variable
+            name="viewmodel"
+            type="com.example.mypractical.ui.main.MainViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.MainActivity">
+
+        <androidx.viewpager.widget.ViewPager
+            setViewPagerImages="@{viewmodel.imageList.data1}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_14sdp"
+            tools:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMovies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            tools:listitem="@layout/adapter_user_list"
+            android:layout_marginTop="@dimen/_10sdp"
+            bindUserList="@{viewmodel.list}"
+            bindMainListner="@{listner}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+
+    </LinearLayout>
+
+</layout>
